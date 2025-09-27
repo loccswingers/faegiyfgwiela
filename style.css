@@ -43,7 +43,7 @@ h1, h2, h3, p {
 }
 
 .input-box {
-  width: 25%;
+  width: 35vmin;
   height: 0.34in;
   font-size: 0.15in;
   font-weight:500;

@@ -6,7 +6,7 @@ html {
 }
 body {
   display: grid;
-  place-items: left;
+  place-items: center;
   font-family: "Sansation", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -85,4 +85,5 @@ h1, h2, h3, p {
   font-weight:700;
   color: #dedede;
   transform: scale(1.075);
+  cursor: pointer;
 }

@@ -2,13 +2,13 @@ const error_text = document.getElementById('errorText');
 
 error_text.style.visibility = 'hidden';
 
-function openAB(target_url) {
-  //let win = window.open();
+function open(target_url) {
+  window.close();
+  
   let win = window.open("about:blank", "", "width=1200, height=600");
   let url = target_url;
   win.document.body.style.margin = '0';
   win.document.body.style.height = '100vh';
-  win.document.title = 'Loading...';
   
   let iframe = win.document.createElement('iframe');
   iframe.style.border = 'none';
@@ -57,7 +57,8 @@ function authenticate(){
   };
 
   if (input.value == getPass("authenticated")) {
-    window.location.href = getPass("home");
+    //window.location.href = getPass("home");
+      open(getPass("home"));
   } else {
       errorFunc("Invalid Password!");
   }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="eng-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Games</title>
+  </head>
+  <body>
+    <div style="margin: 0;" class="logo-container">
+      <span class="logo">GAMES<span class="accent">_</span></span>
+    </div>
+    <div class="search">
+        <input id="searchbar" type="text" placeholder="Search for a game" oninput="Search()">
+    </div>
+    <script>
+      function Goto(name, path, main_url){
+        window.location.replace("go.html?title=" + name + "&url=" + main_url + path);
+      }
+      function Search(){
+        let input = document.getElementById("searchbar");
+        let filter = input.value.toLowerCase();
+        let container = document.getElementById("search-items");
+        let items = container.getElementsByClassName("search-item");
+
+        for (var i = 0; i < items.length; i++) {
+          let div = items[i];
+          let element = div.getElementsByTagName("a")[0];
+          if (!element.innerHTML.toLowerCase().includes(filter)) {
+            items[i].style.display = "none";
+          } else {
+            items[i].style.display = "";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
